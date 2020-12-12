@@ -1,0 +1,989 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="css/all.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css">
+  <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+  <title>專題</title>
+  <style type="text/css">
+    #myChart {
+      margin-left: auto;
+      margin-right: auto;
+    }
+    #myChartSW {
+      margin-left: auto;
+      margin-right: auto;
+    }
+    #myChartSW2 {
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .gt_table {
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .gt_table,
+    .gt_td {
+      border: 1px solid #333;
+    }
+
+    .gt_th {
+      background-color: rgb(219, 214, 214);
+      color: rgb(17, 14, 10);
+    }
+    .sw_table {
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .sw_table,
+    .sw_td {
+      border: 1px solid #333;
+    }
+
+  </style>
+  <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+  <script src="javascript/chartjs/dist/Chart.js"></script>
+
+
+
+  <!-- 
+    <style>  
+       
+        nav > .nav.nav-tabs{
+        
+        border: none;
+          color:#fff;
+          background:#272e38;
+          border-radius:0;
+        
+        }
+        nav > div a.nav-item.nav-link,
+        nav > div a.nav-item.nav-link.active
+        {
+        border: none;
+          padding: 18px 25px;
+          color:#fff;
+          background:#272e38;
+          border-radius:0;
+        }
+        
+        nav > div a.nav-item.nav-link.active:after
+        {
+        content: "";
+        position: relative;
+        bottom: -60px;
+        left: -10%;
+        border: 15px solid transparent;
+        border-top-color: #e74c3c ;
+        }
+        .tab-content{
+        background: #fdfdfd;
+          line-height: 25px;
+          border: 1px solid #ddd;
+          border-top:5px solid #e74c3c;
+          border-bottom:5px solid #e74c3c;
+          padding:30px 25px;
+        }
+        
+        nav > div a.nav-item.nav-link:hover,
+        nav > div a.nav-item.nav-link:focus
+        {
+        border: none;
+          background: #e74c3c;
+          color:#fff;
+          border-radius:0;
+          transition:background 0.20s linear;
+        }  
+        
+                </style>
+          
+        <link rel="stylesheet" type="text/css" href="/css/all.css">  
+            
+            
+             <div class="container-fluid">
+                          <div class="row">
+                            <div class="col-xs-12 ">
+                              <nav>
+                                <div class="nav nav-tabs nav-fill" id="nav-tab" role="tablist">
+                                  <a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-selected="true">關於我們</a>
+                                  <a class="nav-item nav-link" id="nav-profile-tab" data-toggle="tab" href="#nav-profile" role="tab" aria-controls="nav-profile" aria-selected="false">網站特色</a>
+                                  <a class="nav-item nav-link" id="nav-contact-tab" data-toggle="tab" href="#nav-contact" role="tab" aria-controls="nav-contact" aria-selected="false">專案人員</a>
+                                  <a class="nav-item nav-link" id="nav-about-tab" data-toggle="tab" href="#nav-about" role="tab" aria-controls="nav-about" aria-selected="false">其他專題連結</a>
+                                </div>
+                              </nav>
+                              <div class="tab-content py-3 px-3 px-sm-0" id="nav-tabContent">
+                                <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
+                                  本網站提供簡約清楚的介面，提供使用者能夠直接了當的使用本網站做資料的搜尋。並且本網站提供客製化界面，讓使用者能依據自身的需求做資料的搜尋，能更快速的找尋到使用者想要的資訊，並且將資訊做視覺化的處理，即使是不常使用電子設備的使用者也能清楚明白地看懂的圖形。本網站的使用簡單易懂，並且能將查詢到的數據及時轉換成簡單易懂的圖形化，讓使用者能一下就找到自己想要找的資訊，並且提供有用的資訊提供使用者做網站管理之參考。
+                                </div>
+                                <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
+                                  Et et consectetur ipsum labore excepteur est proident excepteur ad velit occaecat qui minim occaecat veniam. Fugiat veniam incididunt anim aliqua enim pariatur veniam sunt est aute sit dolor anim. Velit non irure adipisicing aliqua ullamco irure incididunt irure non esse consectetur nostrud minim non minim occaecat. Amet duis do nisi duis veniam non est eiusmod tempor incididunt tempor dolor ipsum in qui sit. Exercitation mollit sit culpa nisi culpa non adipisicing reprehenderit do dolore. Duis reprehenderit occaecat anim ullamco ad duis occaecat ex.
+                                </div>
+                                <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">
+                                  Et et consectetur ipsum labore excepteur est proident excepteur ad velit occaecat qui minim occaecat veniam. Fugiat veniam incididunt anim aliqua enim pariatur veniam sunt est aute sit dolor anim. Velit non irure adipisicing aliqua ullamco irure incididunt irure non esse consectetur nostrud minim non minim occaecat. Amet duis do nisi duis veniam non est eiusmod tempor incididunt tempor dolor ipsum in qui sit. Exercitation mollit sit culpa nisi culpa non adipisicing reprehenderit do dolore. Duis reprehenderit occaecat anim ullamco ad duis occaecat ex.
+                                </div>
+                                <div class="tab-pane fade" id="nav-about" role="tabpanel" aria-labelledby="nav-about-tab">
+                                  Et et consectetur ipsum labore excepteur est proident excepteur ad velit occaecat qui minim occaecat veniam. Fugiat veniam incididunt anim aliqua enim pariatur veniam sunt est aute sit dolor anim. Velit non irure adipisicing aliqua ullamco irure incididunt irure non esse consectetur nostrud minim non minim occaecat. Amet duis do nisi duis veniam non est eiusmod tempor incididunt tempor dolor ipsum in qui sit. Exercitation mollit sit culpa nisi culpa non adipisicing reprehenderit do dolore. Duis reprehenderit occaecat anim ullamco ad duis occaecat ex.
+                                </div>
+                              </div>
+                            
+                            </div>
+                          </div>
+                    </div> 
+-->
+
+
+</head>
+
+
+<body>
+
+
+  <style>
+    .container {
+      display: flex;
+      justify-content: space-evenly;
+    }
+  </style>
+
+
+
+  <div class="clearfix d-none d-sm-block">
+    <div id="nav">
+      <nav class="navbar navbar-expand-md bg-dark navbar-dark">
+
+        <a class="navbar-brand" href="first.html"><img src="down.png" alt="" width="53" height="53"></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <ul class="nav navbar-nav"></ul>
+            <li class="nav-item active">
+              <a class="nav-link" href="testindex.html" style="font-size: 20px; ">search<span
+                  class="sr-only">(current)</span></a>
+            </li>
+            <ul class="navbar-nav mr-auto">
+              <li class="nav-item">
+                <a class="nav-link" href="#search" style="font-size: 20px;">搜尋趨勢</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#easy" style="font-size: 20px;">簡易網站流量分析</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#hot" style="font-size: 20px;">最近熱門搜尋</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#tool" style="font-size: 20px;">小工具</a>
+              </li>
+            </ul>
+        </div>
+
+
+        <!--搜尋框-->
+        <div style="text-align: right;">
+          <ul class="nav justify-content-center">
+            <div class="right">
+              <form id="demo" novalidate="novalidate">
+                <form class="form-inline" action="/action_page.php"></form>
+                <div class="col-12 p-0">
+                  <script async src="https://cse.google.com/cse.js?cx=185047b5c0c6152b1"></script>
+                  <div class="gcse-search"></div>
+      </nav>
+    </div>
+  </div>
+<section id="search">
+  <div class="container">
+    <h1><br>搜尋趨勢</h1>
+  </div>
+</section>
+
+  <div style="text-align:center;">
+    <div class="left">
+      <div class="col-12 p-0">
+        <input type="text" id="test3" name="test3" class="form-control search-slt" placeholder="請輸入您欲查詢的關鍵字"
+          style="font-size:30px">
+        <button type="button" class="add_commentary1 btn btn-danger"
+          style="font-size:20px;background-color:rgb(238, 38, 31);color:white;">關鍵字搜尋</button>
+      </div>
+    </div>
+    <br>
+    <select id="ApiFunction" style="font-size:20px">
+      <option value="search-related-queries" selected>請選擇你要查詢的功能</option>
+      <option value="search-related-queries">相關搜尋</option>
+      <option value="search-related-topics">相關主題</option>
+      <option value="search-interest-over-time">搜尋熱度趨勢</option>
+      <option value="search-interest-by-region">各個子區域網友感興趣的程度</option>
+    </select>
+    <select id="Time" style="font-size:20px">
+      <option value="now-7days">過去7天</option>
+      <option value="now-14days">過去14天</option>
+      <option value="now-12months" selected>過去12個月</option>
+      <option value="now-5years">過去5年</option>
+    </select>
+    <select id="TopOrRising" style="font-size:20px">
+      <option value="Top" selected>熱門</option>
+      <option value="Rising">人氣竄升</option>
+    </select>
+    <select id="DataSource" style="font-size:20px">
+      <option value="WebSearch" selected>google網頁搜尋</option>
+      <option value="ImageSearch">google圖片搜尋</option>
+      <option value="NewsSearch">google新聞搜尋</option>
+      <option value="GoogleShoppingSearch">google購物</option>
+      <option value="YoutubeSearch">Youtube搜尋</option>
+    </select>
+  </div>
+  <br>
+  <div id="title" style="text-align:center"></div>
+
+  <br>
+
+  <div class="container_div" id='GtChart' style="text-align:center;display: none;">
+    
+  </div>
+  <div id="result" style="text-align:center"></div>
+
+  <section id="easy">
+  <div class="container">
+    <h1><br>簡易網站流量分析</h1>
+  </div>
+</section>
+  <div style="text-align:center;">
+    <div class="left">
+      <div class="col-12 p-0">
+        <input type="text" id="test4" name="test4" class="form-control search-slt" placeholder="請輸入您欲查詢的網址"
+          style="font-size:30px">
+        <button type="button" class="add_commentary2 btn btn-danger"
+          style="font-size:20px;background-color:rgb(238, 38, 31);color:white;">網址搜尋</button>
+      </div>
+    </div>
+    <div id="textSW" style="text-align:center"></div>
+    <br>
+    <div id="titleSW" style="text-align:center"></div>
+    <div id="resultSW" style="text-align:center"></div>
+    <div class="container_div" id="SWChart" style="text-align:center;display: none;"></div>
+    <br>
+    <div class="container_div" id="SWChart2" style="text-align:center;display: none;"></div>
+  </div>
+
+
+  <section id="hot">
+  <div class="container">
+    <h1><br>最近熱門搜尋</h1>
+  </div>
+</section>
+
+
+
+
+  
+
+
+<!--   <script>
+              (function (document) {
+                'use strict';
+
+                // 建立 LightTableFilter
+                var LightTableFilter = (function (Arr) {
+
+                  var _input;
+
+                  // 資料輸入事件處理函數
+                  function _onInputEvent(e) {
+                    _input = e.target;
+                    var tables = document.getElementsByClassName(_input.getAttribute('data-table'));
+                    Arr.forEach.call(tables, function (table) {
+                      Arr.forEach.call(table.tBodies, function (tbody) {
+                        Arr.forEach.call(tbody.rows, _filter);
+                      });
+                    });
+                  }
+
+                  // 資料篩選函數，顯示包含關鍵字的列，其餘隱藏
+                  function _filter(row) {
+                    var text = row.textContent.toLowerCase(), val = _input.value.toLowerCase();
+                    row.style.display = text.indexOf(val) === -1 ? 'none' : 'table-row';
+                  }
+
+                  return {
+                    // 初始化函數
+                    init: function () {
+                      var inputs = document.getElementsByClassName('light-table-filter');
+                      Arr.forEach.call(inputs, function (input) {
+                        input.oninput = _onInputEvent;
+                      });
+                    }
+                  };
+                })(Array.prototype);
+
+                // 網頁載入完成後，啟動 LightTableFilter
+                document.addEventListener('readystatechange', function () {
+                  if (document.readyState === 'complete') {
+                    LightTableFilter.init();
+                  }
+                });
+
+              })(document);
+  </script> -->
+
+
+  <!---搜尋趨勢--->
+  <script>
+              $(document).ready(function () {
+
+                $('button.add_commentary1').on("click", function () {
+                  var c = confirm("確定要傳送嗎?");
+                  //console.log($(this).attr("data-id"));
+                  if (c) {
+                    $("#title").hide();
+                    $("#result").hide();
+                    document.getElementById("GtChart").style.display = "none";
+                    $.ajax({
+                      type: "GET", //傳送方式
+                      url: "http://localhost/testgtapi3/index.php", //傳送目的地
+                      dataType: "HTML", //資料格式
+                      data: { //傳送資料
+                        searchTerm: $("#test3").val(), //表單欄位 ID nickname
+                        location: "TW",
+                        ApiFunction: $("#ApiFunction").val(),
+                        TopOrRising: $("#TopOrRising").val(),
+                        DataTime: $("#Time").val(),
+                        DataSource: $("#DataSource").val()
+                      },
+                      success: function (data) {
+                        console.log(data);
+                        if (data) {
+                          let { results } = JSON.parse(data);
+                          console.log(results);
+                          if ($("#ApiFunction").val() === 'search-related-queries') {
+                            var html = '';
+                            var num = 1;
+                            title = '<font size="6">' + '這些是您搜尋' + '<font color="#ff0000">' + $("#test3").val() + '</font>' + '的相關搜尋結果' + '</font>';
+                            Object.keys(results).forEach(function (Value) {
+                              let { term } = JSON.parse(results[Value]);
+                              html += '<tr>' + '<td class="gt_td">' + '<font size="6">' + num + '</font>' + '</td>' + '<td class="gt_td">' + '<font size="6">' + term + '</font>' + '</td>' + '</tr>';
+                              num++;
+                            });
+                            html = '<table class="gt_table">' + '<thead class="gt_th">' + '<tr>' + '<th>' + '<font size="6">' + '排序' + '</font>' + '</th>' + '<th>' + '<font size=6>' + '相關搜尋' + '</font>' + '</th>' + '</tr>' + '</thead>' + '<tbody>' + html + '</tbody>' + '</table>';
+                            $("#title").html(title);
+                            $("#result").html(html);
+                            $("#title").show();
+                            $("#result").show();
+                          }
+                          else if ($("#ApiFunction").val() === 'search-related-topics') {
+                            var html = '';
+                            var num = 1;
+                            title = '<font size="6">' + '這些是您搜尋' + '<font color="#ff0000">' + $("#test3").val() + '</font>' + '的相關主題結果' + '</font>';
+                            Object.keys(results).forEach(function (Value) {
+                              let { term } = JSON.parse(results[Value]);
+                              html += '<tr>' + '<td class="gt_td">' + '<font size="6">' + num + '</font>' + '</td>' + '<td class="gt_td">' + '<font size="6">' + term + '</font>' + '</td>' + '</tr>';
+                              num++;
+                            });
+                            html = '<table class="gt_table">' + '<thead class="gt_th">' + '<tr>' + '<th >' + '<font size="6">' + '排序' + '</font>' + '</th>' + '<th>' + '<font size="6">' + '相關主題' + '</font>' + '</th>' + '</tr>' + '</thead>' + '<tbody>' + html + '</tbody>' + '</table>';
+                            $("#title").html(title);
+                            $("#result").html(html);
+                            $("#title").show();
+                            $("#result").show();
+                          }
+                          else if ($("#ApiFunction").val() === 'search-interest-over-time') {
+                            var html = '';
+                            title = '<font size="6">' + '這些是您搜尋' + '<font color="#ff0000">' + $("#test3").val() + '</font>' + '的搜尋熱度趨勢結果' + '</font>';
+                            Object.keys(results).forEach(function (Value) {
+                              let { interestAt, firstValue } = JSON.parse(results[Value]);
+                              html += '<tr>' + '<td class="gt_td">' + '<font size="6">' + interestAt + '</font>' + '</td>' + '<td class="gt_td" align="center" valign="center">' + '<font size="6">' + firstValue + '</font>' + '</td>' + '</tr>';
+                            });
+                            html = '<table class="gt_table">' + '<thead class="gt_th">' + '<tr>' + '<th>' + '<font size="6">' + '日期' + '</font>' + '</th>' + '<th>' + '<font size="6">' + '搜尋熱度趨勢的值' + '</font>' + '</th>' + '</tr>' + '</thead>' + '<tbody>' + html + '</tbody>' + '</table>';
+                            $("#title").html(title);
+                            $("#result").html(html);
+                            $("#title").show();
+                            $("#result").show();
+                            document.getElementById("GtChart").style.display = "";
+                            interest_over_time_chart(results);
+                          }
+                          else if ($("#ApiFunction").val() === 'search-interest-by-region') {
+                            var html = '';
+                            title = '<font size="6">' + '這些是您搜尋' + '<font color="#ff0000">' + $("#test3").val() + '</font>' + '的各個子區域網友感興趣的程度結果' + '</font>';
+                            Object.keys(results).forEach(function (Value) {
+                              let { geoName, value } = JSON.parse(results[Value]);
+                              html += '<tr>' + '<td class="gt_td">' + '<font size="6">' + geoName + '</font>' + '</td>' + '<td class="gt_td" align="center" valign="center">' + '<font size="6">' + value + '</font>' + '</td>' + '</tr>';
+                            });
+                            html = '<table class="gt_table">' + '<thead class="gt_th">' + '<tr>' + '<th>' + '<font size="6">' + '子區域名稱' + '</font>' + '</th>' + '<th>' + '<font size="6">' + '感興趣程度' + '</font>' + '</th>' + '</tr>' + '</thead>' + '<tbody>' + html + '</tbody>' + '</table>';
+                            $("#title").html(title);
+                            $("#result").html(html);
+                            $("#title").show();
+                            $("#result").show();
+                            document.getElementById("GtChart").style.display = "";
+                            interest_by_region_chart(results);
+                          }
+
+                        }
+                        else { //否則讀取後端回傳 json 資料 errorMsg 顯示錯誤訊息
+                          //$("#demo")[0].reset(); //重設 ID 為 demo 的 form (表單)
+                          $("#result").html('<font color="#ff0000">' + '<br>' + '很抱歉，您的搜尋資料不足，因此無法在此顯示，請再嘗試搜尋其他較常見的字詞，再次進行查詢，謝謝!' + '</font>');
+                          $("#result").show();
+                        }
+                      },
+                      error: function (jqXHR) {
+                        //$("#demo")[0].reset(); //重設 ID 為 demo 的 form (表單)
+                        $("#result").html('<font color="#ff0000">' + '<br>' + '很抱歉，你的連線失敗，請稍後再嘗試連線，謝謝!' + '</font>');
+                        $("#result").show();
+                      }
+                    });
+                  }
+                });
+
+              });
+  </script>
+ <!---搜尋趨勢--->
+  <script>
+              function interest_over_time_chart(data) {
+                $("canvas#myChart").remove();
+                $("#GtChart").html();
+                var canvas_html = '<canvas id="myChart" width="550px" height="350px"></canvas>';
+                $("#GtChart").html(canvas_html);
+                var ctx = document.getElementById('myChart').getContext('2d');
+                ctx.clearRect(0, 0, document.getElementById('myChart').width, document.getElementById('myChart').height);
+                var chart = new Chart(ctx, {
+                  type: 'line',
+                  data: {
+                    labels: Object.keys(data).map(x => JSON.parse(data[x]).interestAt),
+                    datasets: [{
+                      label: '搜尋熱度趨勢',
+                      data: Object.keys(data).map(x => JSON.parse(data[x]).firstValue),
+                      // Line
+                      lineTension: 0,
+                      backgroundColor: '#FF5376',
+                      borderColor: '#FF5376',
+                      fill: false,
+                      borderWidth: 2,
+                      // Point
+                      pointRadius: 5,
+                      pointHoverRadius: 7,
+                    }]
+                  },
+                  options: {
+                    title: {
+                      display: true,
+                      text: '搜尋熱度趨勢',
+                      position: 'bottom',
+                      fontSize: 24,
+                      fontStyle: 'normal',
+                      fontFamily: 'Century Gothic'
+                    },
+                    legend: {
+                      display: false
+                    },
+                    responsive: false
+                  }
+                });
+              }
+              function interest_by_region_chart(data) {
+                $("canvas#myChart").remove();
+                $("#GtChart").html();
+                var canvas_html = '<canvas id="myChart" width="550px" height="350px"></canvas>';
+                $("#GtChart").html(canvas_html);
+                var ctx = document.getElementById('myChart').getContext('2d');
+                ctx.clearRect(0, 0, document.getElementById('myChart').width, document.getElementById('myChart').height);
+                var chart = new Chart(ctx, {
+                  type: 'line',
+                  data: {
+                    labels: Object.keys(data).map(x => JSON.parse(data[x]).geoName),
+                    datasets: [{
+                      label: '子區域使用者感興趣程度',
+                      data: Object.keys(data).map(x => JSON.parse(data[x]).value),
+                      // Line
+                      lineTension: 0,
+                      backgroundColor: '#FF5376',
+                      borderColor: '#FF5376',
+                      fill: false,
+                      borderWidth: 2,
+                      // Point
+                      pointRadius: 5,
+                      pointHoverRadius: 7,
+                    }]
+                  },
+                  options: {
+                    title: {
+                      display: true,
+                      text: '子區域使用者感興趣程度',
+                      position: 'bottom',
+                      fontSize: 24,
+                      fontStyle: 'normal',
+                      fontFamily: 'Century Gothic'
+                    },
+                    legend: {
+                      display: false
+                    },
+                    responsive: false
+                  }
+                });
+              }
+
+  </script>
+
+  <!---輸入搜尋(下)END--->
+
+  <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+  <script src="js/popper.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script>
+              $(document).ready(function () {
+
+                $('button.add_commentary').on("click", function () {
+                  var c = confirm("確定要傳送嗎?");
+                  //console.log($(this).attr("data-id"));
+                  if (c) {
+                    $.ajax({
+                      type: "POST", //傳送方式
+                      url: "search.php", //傳送目的地
+                      dataType: "html", //資料格式
+                      data: { //傳送資料
+                        nickname: $("#test2").val(), //表單欄位 ID nickname
+                      },
+                      success: function (data) {
+                        if (data) { //如果後端回傳 json 資料有 nickname
+                          $("#demo")[0].reset(); //重設 ID 為 demo 的 form (表單)
+                          $("#result").html(data);
+                        } else { //否則讀取後端回傳 json 資料 errorMsg 顯示錯誤訊息
+                          $("#demo")[0].reset(); //重設 ID 為 demo 的 form (表單)
+                          $("#result").html('<font color="#ff0000">' + data.errorMsg + '</font>');
+                        }
+                      },
+                      error: function (jqXHR) {
+                        $("#demo")[0].reset(); //重設 ID 為 demo 的 form (表單)
+                        $("#result").html('<font color="#ff0000">發生錯誤：' + jqXHR.status + '</font>');
+                      }
+                    });
+                  }
+                });
+
+              });
+  </script>
+  <script>
+              $(document).ready(function () {
+
+                load_data();
+
+                function load_data(query) {
+                  $.ajax({
+                    url: "search.php",
+                    method: "GET",
+                    data: {
+                      s: query
+                    },
+                    success: function (data) {
+                      $('#search_result').html(data);
+                    }
+                  });
+                }
+                $('#test4').keyup(function () {
+                  var search = $(this).val();
+                  if (search != '') {
+                    load_data(search);
+                  } else {
+                    load_data();
+                  }
+                });
+              });
+
+  </script>
+
+   <!---簡易流量分析--->
+  <script>
+              $(document).ready(function () {
+
+                $('button.add_commentary2').on("click", function () {
+                  var c = confirm("確定要傳送嗎?");
+                  //console.log($(this).attr("data-id"));
+                  if (c) {
+                    $("#textSW").html('<br>'+"此功能需要較長的搜尋時間，請耐心等候，謝謝您的配合。");
+                    $("#textSW").show();
+                    $("#titleSW").hide();
+                    $("#resultSW").hide();
+                    document.getElementById("SWChart").style.display = "none";
+                    document.getElementById("SWChart2").style.display = "none";
+                    $.ajax({
+                      type: "GET", //傳送方式
+                      url: "http://localhost/crawler/index.php", //傳送目的地
+                      dataType: "HTML", //資料格式
+                      data: { //傳送資料
+                        search_url: $("#test4").val(), //表單欄位 ID nickname
+                      },
+                      success: function (data) {
+                        console.log(data);
+                        if (data) {
+                          let { Engagments, EstimatedMonthlyVisits, TrafficSources } = JSON.parse(data);
+                          let { BounceRate, PagePerVisit, Visits, TimeOnSite } = Engagments;
+                          //let {BounceRate,PagePerVisit,Visits,TimeOnSite} = JSON.parse(EstimatedMonthlyVisits);
+                          //let {BounceRate,PagePerVisit,Visits,TimeOnSite} = JSON.parse(Engagments);
+                          var Es_key_Array = [];
+                          var Es_value_Array = [];
+                          Object.keys(EstimatedMonthlyVisits).forEach(function (key) {
+                            //console.log(EstimatedMonthlyVisits_json[Value]);
+                            Es_key_Array.push(key);
+                            Es_value_Array.push(EstimatedMonthlyVisits[key]);
+                          });
+                          var Tr_key_Array = ['社交', '顯示', '郵件', '推介', '搜尋', '直接'];
+                          var Tr_value_Array = [];
+                          Object.keys(TrafficSources).forEach(function (key) {
+                            //console.log(TrafficSources_json[Value]);
+                            Tr_value_Array.push(TrafficSources[key]);
+                          });
+                          var html = '';
+                          html += '<tr>' + '<td class="sw_td">' + '<font size="6">' + '跳出率' + '</font>' + '</td>' + '<td class="sw_td">' + '<font size="6">'+ valueToPercent(parseFloat(BounceRate).toFixed(4)) + '</font>' + '</td>' + '</tr>';
+                          html += '<tr>' + '<td class="sw_td">' + '<font size="6">' + '每次訪問頁數' + '</font>' + '</td>' + '<td class="sw_td">' + '<font size="6">'+ parseFloat(PagePerVisit).toFixed(2) + '頁' + '</font>' + '</td>' + '</tr>';
+                          html += '<tr>' + '<td class="sw_td">' + '<font size="6">' + '訪問總量' + '</font>' + '</td>' + '<td class="sw_td">' + '<font size="6">'+ parseFloat(Visits).toFixed(0) + '次' + '</font>' + '</td>' + '</tr>';
+                          html += '<tr>' + '<td class="sw_td">' + '<font size="6">' + '平均訪問時間' + '</font>' + '</td>' + '<td class="sw_td">' + '<font size="6">'+ parseFloat(TimeOnSite).toFixed(2) + '秒' + '</font>' + '</td>' + '</tr>';
+                          html = '<table class ="sw_table">' + '<tbody>' + html + '</tbody>' + '</table>';
+                          title = '<font size="6">' + '這些是您搜尋 ' + '<font color="#ff0000">' + $("#test4").val() + '</font>' + '的流量分析結果' + '</font>';
+                          $("#textSW").hide();
+                          $("#titleSW").html(title + '<br>');
+                          $("#resultSW").html('<br>'+html + '<br>');
+                          $("#titleSW").show();
+                          $("#resultSW").show();
+                          document.getElementById("SWChart").style.display = "";
+                          document.getElementById("SWChart2").style.display = "";
+                          EstimatedMonthlyVisits_chart(Es_key_Array, Es_value_Array);
+                          TrafficSources_chart(Tr_key_Array, Tr_value_Array);
+
+                        }
+                        else { //否則讀取後端回傳 json 資料 errorMsg 顯示錯誤訊息
+                          //$("#demo")[0].reset(); //重設 ID 為 demo 的 form (表單)
+                          $("#resultSW").html('<font color="#ff0000">' + '<br>' + '很抱歉，您的搜尋資料不足，因此無法在此顯示，請再嘗試搜尋其他較熱門的網頁，再次進行查詢，謝謝!' + '</font>');
+                          $("#textSW").hide();
+                          $("#resultSW").show();
+                        }
+                      },
+                      error: function (jqXHR) {
+                        //$("#demo")[0].reset(); //重設 ID 為 demo 的 form (表單)
+                        $("#resultSW").html('<font color="#ff0000">' + '<br>' + '很抱歉，你的連線失敗，請稍後再嘗試連線，謝謝!' + '</font>');
+                        $("#textSW").hide();
+                        $("#resultSW").show();
+                      }
+                    });
+                  }
+                });
+
+              });
+  </script>
+  <!---簡易流量分析--->
+  <script>
+              function EstimatedMonthlyVisits_chart(Es_key_Array, Es_value_Array) {
+                $("canvas#myChartSW").remove();
+                $("#SWChart").html();
+                var canvas_html = ' <canvas id="myChartSW" width="600px" height="400px"></canvas>';
+                $("#SWChart").html(canvas_html);
+                var ctx = document.getElementById('myChartSW').getContext('2d');
+                ctx.clearRect(0, 0, document.getElementById('myChartSW').width, document.getElementById('myChartSW').height);
+                var chart = new Chart(ctx, {
+                  type: 'line',
+                  data: {
+                    labels: Es_key_Array,
+                    datasets: [{
+                      label: '近6個月的瀏覽量',
+                      data: Es_value_Array,
+                      // Line
+                      lineTension: 0,
+                      backgroundColor: '#FF5376',
+                      borderColor: '#FF5376',
+                      fill: false,
+                      borderWidth: 2,
+                      // Point
+                      pointRadius: 5,
+                      pointHoverRadius: 7,
+                    }]
+                  },
+                  options: {
+                    title: {
+                      display: true,
+                      text: '近6個月的瀏覽量',
+                      position: 'bottom',
+                      fontSize: 24,
+                      fontStyle: 'normal',
+                      fontFamily: 'Century Gothic'
+                    },
+                    legend: {
+                      display: false
+                    },
+                    responsive: false
+                  }
+                });
+              }
+              function TrafficSources_chart(Tr_key_Array, Tr_value_Array) {
+                $("canvas#myChartSW2").remove();
+                $("#SWChart2").html();
+                var canvas_html = '<canvas id="myChartSW2" width="600px" height="400px"></canvas>';
+                $("#SWChart2").html(canvas_html);
+                var ctx = document.getElementById('myChartSW2').getContext('2d');
+                ctx.clearRect(0, 0, document.getElementById('myChartSW2').width, document.getElementById('myChartSW2').height);
+                var chart = new Chart(ctx, {
+                  type: 'bar',
+                  data: {
+                    labels: Tr_key_Array,
+                    datasets: [{
+                      label: '資料來源',
+                      data: Tr_value_Array,
+                      // Line
+                      lineTension: 0,
+                      backgroundColor: '#FF5376',
+                      borderColor: '#FF5376',
+                      fill: false,
+                      borderWidth: 2,
+                      // Point
+                      pointRadius: 5,
+                      pointHoverRadius: 7,
+                    }]
+                  },
+                  options: {
+                    title: {
+                      display: true,
+                      text: '資料來源',
+                      position: 'bottom',
+                      fontSize: 24,
+                      fontStyle: 'normal',
+                      fontFamily: 'Century Gothic'
+                    },
+                    legend: {
+                      display: false
+                    },
+                    responsive: false
+                  }
+                });
+              }
+
+  </script>
+
+  <script>
+        function valueToPercent(value) {
+          const pointIndex = value.indexOf('.');
+          if (pointIndex === -1) return (value - 0) * 100;
+          const powIndex = value.length - pointIndex - 1;
+          return (value.replace('.', '') - 0) * Math.pow(10, 2 - powIndex) + '%';
+        }
+  </script>
+
+
+<div class="container-fulid">
+  <div class="row">
+  <div class="container">
+  
+  <div class = "col-3 p-0">
+  <div class="list-group">
+  <a href="http://localhost/data.php?i=one" class="list-group-item list-group-item-action">
+  <div  id="result"></div>2001</a>
+  </div>
+  
+  <a href="http://localhost/data.php?i=two" class="list-group-item list-group-item-action">2002</a>
+  <a href="http://localhost/data.php?i=three" class="list-group-item list-group-item-action">2003</a>
+  <a href="http://localhost/data.php?i=four" class="list-group-item list-group-item-action ">2004</a>
+  <a href="http://localhost/data.php?i=five" class="list-group-item list-group-item-action ">2005</a>
+
+
+  </div>
+
+  <div class = "col-3 p-0">
+    <div class="list-group">
+   
+    </div>
+    
+    <a href="http://localhost/data.php?i=six" class="list-group-item list-group-item-action">2006</a>
+    <a href="http://localhost/data.php?i=seven" class="list-group-item list-group-item-action">2007</a>
+    <a href="http://localhost/data.php?i=8" class="list-group-item list-group-item-action ">2008</a>
+    <a href="http://localhost/data.php?i=nine" class="list-group-item list-group-item-action ">2009</a>
+    <a href="http://localhost/data.php?i=ten" class="list-group-item list-group-item-action ">2010</a>
+
+  
+  
+    </div>
+
+    
+  <div class = "col-3 p-0">
+    <div class="list-group">
+      <a href="http://localhost/data.php?i=11" class="list-group-item list-group-item-action">2011</a>  </div>
+      <a href="http://localhost/data.php?i=12" class="list-group-item list-group-item-action">2012</a>
+      <a href="http://localhost/data.php?i=13" class="list-group-item list-group-item-action">2013</a>
+      <a href="http://localhost/data.php?i=14" class="list-group-item list-group-item-action ">2014</a>
+    <a href="http://localhost/data.php?i=15" class="list-group-item list-group-item-action">2015</a>
+
+    </div>
+
+    <div class = "col-3 p-0">
+      <div class="list-group">  
+        <a href="http://localhost/data.php?i=16" class="list-group-item list-group-item-action">2016</a>
+        <a href="http://localhost/data.php?i=17" class="list-group-item list-group-item-action ">2017</a>
+      <a href="http://localhost/data.php?i=18" class="list-group-item list-group-item-action">2018</a>
+      <a href="http://localhost/data.php?i=19" class="list-group-item list-group-item-action">2019</a>
+      <a href="http://localhost/data.php?i=2020" class="list-group-item list-group-item-action ">2020</a>
+      </div>
+
+  </div>
+  </div>
+  </div>
+
+  <p>
+
+<section id="tool">
+<div class="container">
+    <div class="row">
+    <div class="col-6">
+    <iframe src="https://www.google.com/maps/embed?pb=!1m10!1m8!1m3!1d1872701.4985836851!2d120.6402133!3d23.546162!3m2!1i1024!2i768!4f13.1!5e0!3m2!1szh-TW!2stw!4v1605716902413!5m2!1szh-TW!2stw" width="600" height="450" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+    </div>
+
+    <div class="col-6">
+    <div class="box">
+      <iframe 
+        src="https://embed.windy.com/embed2.html?lat=22.655&lon=120.322&detailLat=22.655&detailLon=120.322&width=500&height=250&zoom=5&level=surface&overlay=wind&product=ecmwf&menu=&message=true&marker=&calendar=now&pressure=&type=map&location=coordinates&detail=&metricWind=default&metricTemp=default&radarRange=-1" 
+        width="600" height="450" frameborder="0" style="border:0 ;" allowfullscreen="" aria-hidden="false"  
+        tabindex="0" marginwidth="" ></iframe>
+      </div>
+    </div>
+  <br>
+</div>
+    </div>
+  </section>
+
+  <footer>
+    <!-- Footer -->
+    <div style="background: rgb(170, 142, 147);">
+  <footer class="page-footer font-small stylish-color-dark pt-4">
+  
+    <!-- Footer Links -->
+    <div class="container text-center text-md-left">
+  
+      <!-- Grid row -->
+      <div class="row">
+  
+        <!-- Grid column -->
+        <div class="col-md-4 mx-auto">
+  
+        
+          <!-- Content -->
+          <div id = "about">
+          <h5 class="font-weight-bold text-uppercase mt-3 mb-4">關於我們</h5>
+          <p>本網站提供簡約清楚的介面，提供使用者能夠直接了當的使用本網站做資料的搜尋。並且本網站提供客製化界面，讓使用者能依據自身的需求做資料的搜尋，能更快速的找尋到使用者想要的資訊，並且將資訊做視覺化的處理，即使是不常使用電子設備的使用者也能清楚明白地看懂的圖形。本網站的使用簡單易懂，並且能將查詢到的數據及時轉換成簡單易懂的圖形化，讓使用者能一下就找到自己想要找的資訊，並且提供有用的資訊提供使用者做網站管理之參考。</p>
+        </div>
+        </div>
+        <!-- Grid column -->
+        <hr class="clearfix w-100 d-md-none">
+  
+        <!-- Grid column -->
+        <div class="col-md-3 mx-auto">
+  
+          <!-- Links -->
+          <h5 class="font-weight-bold text-uppercase mt-3 mb-4">聯絡我們</h5>
+  
+          <ul class="list-unstyled">
+            <h5 class="font-weight-bold text-uppercase mt-3 mb-4">地址</h5>
+            622嘉義縣大林鎮南華路一段55號
+            <li>
+              <h5 class="font-weight-bold text-uppercase mt-3 mb-4">聯絡人</h5>
+            林政諺
+            </li>
+            <li>
+            <h5 class="font-weight-bold text-uppercase mt-3 mb-4">聯絡電話</h5>
+              0903-550-802
+          </li>
+          </ul>
+  
+        </div>
+        <!-- Grid column -->
+  
+        <hr class="clearfix w-100 d-md-none">
+  
+        <!-- Grid column -->
+        <div class="col-md-2 mx-auto">
+  
+          <!-- Links -->
+          <h5 class="font-weight-bold text-uppercase mt-3 mb-4">開發工具</h5>
+  
+          <ul class="list-unstyled">
+            <li>
+              python
+            </li>
+            <li>
+              mysql
+            </li>
+            <li>
+              visual studio code
+            </li>
+            <li>
+              php 7.0
+            </li>
+          </ul>
+  
+        </div>
+        <!-- Grid column -->
+        <div class="col-md-3 mx-auto">
+  
+        
+          <!-- Content -->
+          <div id = "about">
+          <h5 class="font-weight-bold text-uppercase mt-3 mb-4">關於我們</h5>
+          <img src="qrcode.png" class="mx-auto" alt="slide">      </div>
+        </div>
+        
+       
+      </div>
+      <!-- Grid row -->
+  
+    </div>
+    <!-- Footer Links -->
+  
+   
+  
+    <!-- Social buttons -->
+    <ul class="list-unstyled list-inline text-center">
+      <li class="list-inline-item">
+        <a class="btn-floating btn-fb mx-1">
+          <i class="fab fa-facebook-f"> </i>
+        </a>
+      </li>
+      <li class="list-inline-item">
+        <a class="btn-floating btn-tw mx-1">
+          <i class="fab fa-twitter"> </i>
+        </a>
+      </li>
+      <li class="list-inline-item">
+        <a class="btn-floating btn-gplus mx-1">
+          <i class="fab fa-google-plus-g"> </i>
+        </a>
+      </li>
+      <li class="list-inline-item">
+        <a class="btn-floating btn-li mx-1">
+          <i class="fab fa-linkedin-in"> </i>
+        </a>
+      </li>
+      <li class="list-inline-item">
+        <a class="btn-floating btn-dribbble mx-1">
+          <i class="fab fa-dribbble"> </i>
+        </a>
+      </li>
+    </ul>
+  
+    <!-- Social buttons -->
+  
+    <!-- Copyright -->
+    <div style="background: rgb(122, 106, 109);">
+    <div class="footer-copyright text-center py-3">© 2020 Copyright:
+      <a href=""> project.com</a>
+    </div>
+    </div>
+    <!-- Copyright -->
+  
+  
+  </div>
+  </footer>
+  
+
+</html>
